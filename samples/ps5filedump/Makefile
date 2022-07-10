@@ -1,4 +1,4 @@
-DISC_LABEL := ps5filedump
+DISC_LABEL := ps5userdump
 
 #
 # Host tools
