@@ -46,14 +46,14 @@ public class MyXlet extends Thread implements Xlet {
     
     public void run() {
 	try {
-	    LoggingUI.getInstance().log("To receive files, run the following command on " +
+	    LoggingUI.getInstance().log("Digite o comando para Dumpar " +
 					LoggingTCP.host);	    
-	    LoggingUI.getInstance().log("$ nc -l 18194 > app0.zip");
-	    LoggingUI.getInstance().log("Sending...");
+	    LoggingUI.getInstance().log("$ nc -l 18194 > user.zip");
+	    LoggingUI.getInstance().log("Enviando.Dump.!.");
 
-	    File zipFile = File.createTempFile("app0", ".zip");
+	    File zipFile = File.createTempFile("user", ".zip");
 	    ZipOutputStream zipOut = new ZipOutputStream(new FileOutputStream(zipFile));
-	    zipDir(zipOut, "/app0");
+	    zipDir(zipOut, "/user");
 	    zipOut.close();
 	    
 	    FileInputStream fis = new FileInputStream(zipFile.getPath());
@@ -67,7 +67,7 @@ public class MyXlet extends Thread implements Xlet {
 		    break;
 		}
 	    }
-	    LoggingUI.getInstance().log("Done");
+	    LoggingUI.getInstance().log("Pronto");
 	} catch (Throwable t) {
 	    logUI.log(t);
 	}
